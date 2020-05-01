@@ -44,12 +44,6 @@ a {
   -webkit-text-decoration-skip: objects;
   text-decoration: none;
 }
-a,
-a:visited,
-a:hover,
-a:active {
-  color: inherit;
-}
 a:active,
 a:hover {
   outline-width: 0;
