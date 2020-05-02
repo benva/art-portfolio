@@ -30,6 +30,7 @@ const MobileLinks = styled.div`
   width: 100%;
   height: 100%;
   transition: left 0.5s;
+  z-index: 1;
 `;
 
 const LinksContainer = styled.div`
