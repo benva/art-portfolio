@@ -50,7 +50,7 @@ const LinksContainer = styled.div`
 const Hamburger = styled.div`
   cursor: pointer;
   display: none;
-  position: fixed;
+  position: absolute;
   top: 28px;
   right: 20px;
   z-index: 1;
