@@ -10,6 +10,8 @@ const CardContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: space-evenly;
+  max-width: 750px;
+  margin: 0 auto;
 `;
 
 const IndexPage = () => (
