@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 
-import { phone } from './global-style';
+import { tablet } from './global-style';
 
 const Container = styled.header`
   text-transform: uppercase;
@@ -17,7 +17,7 @@ const Container = styled.header`
 `;
 
 const Links = styled.div`
-  @media (max-width: ${phone}) {
+  @media (max-width: ${tablet}) {
     display: none;
   }
 `;
@@ -26,9 +26,10 @@ const MobileLinks = styled.div`
   background-color: red;
   position: fixed;
   top: 0;
-  left: 0;
+  left: ${({ open }) => (open ? '0' : '100%')};
   width: 100%;
   height: 100%;
+  transition: left 0.5s;
 `;
 
 const LinksContainer = styled.div`
@@ -36,7 +37,8 @@ const LinksContainer = styled.div`
   justify-content: space-evenly;
   width: 300px;
 
-  @media (max-width: ${phone}) {
+  @media (max-width: ${tablet}) {
+    display: ${({ open }) => (open ? 'block' : 'none')};
     flex-direction: column;
     width: inherit;
     text-align: center;
@@ -52,7 +54,7 @@ const Hamburger = styled.div`
   right: 20px;
   z-index: 1;
 
-  @media (max-width: ${phone}) {
+  @media (max-width: ${tablet}) {
     display: block;
   }
 `;
@@ -84,7 +86,7 @@ const Header = ({ siteTitle }) => {
   const closeMenu = () => setMenuOpen(false);
 
   const renderLinks = () => (
-    <LinksContainer>
+    <LinksContainer open={menuOpen}>
       <h3>
         <Link onClick={closeMenu} to="/about">
           About
@@ -104,11 +106,11 @@ const Header = ({ siteTitle }) => {
         <Link to="/">{siteTitle}</Link>
       </h1>
       <Links>{renderLinks()}</Links>
+      <MobileLinks open={menuOpen}>{renderLinks()}</MobileLinks>
       <Hamburger onClick={toggleMenu}>
         {!menuOpen && <Img alt="menu" fixed={data.hamburger.childImageSharp.fixed} />}
         {menuOpen && <Img alt="menu" fixed={data.close.childImageSharp.fixed} />}
       </Hamburger>
-      {menuOpen && <MobileLinks open={menuOpen}>{renderLinks()}</MobileLinks>}
     </Container>
   );
 };
