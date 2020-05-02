@@ -67,6 +67,13 @@ const Header = ({ siteTitle }) => {
           }
         }
       }
+      close: file(relativePath: { eq: "header/close.png" }) {
+        childImageSharp {
+          fixed(width: 32) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
     }
   `);
 
@@ -74,13 +81,19 @@ const Header = ({ siteTitle }) => {
 
   const toggleMenu = () => setMenuOpen((prevMenuOpen) => !prevMenuOpen);
 
+  const closeMenu = () => setMenuOpen(false);
+
   const renderLinks = () => (
     <LinksContainer>
       <h3>
-        <Link to="/about">About</Link>
+        <Link onClick={closeMenu} to="/about">
+          About
+        </Link>
       </h3>
       <h3>
-        <Link to="/contact">Contact</Link>
+        <Link onClick={closeMenu} to="/contact">
+          Contact
+        </Link>
       </h3>
     </LinksContainer>
   );
@@ -92,7 +105,8 @@ const Header = ({ siteTitle }) => {
       </h1>
       <Links>{renderLinks()}</Links>
       <Hamburger onClick={toggleMenu}>
-        <Img alt="menu" fixed={data.hamburger.childImageSharp.fixed} />
+        {!menuOpen && <Img alt="menu" fixed={data.hamburger.childImageSharp.fixed} />}
+        {menuOpen && <Img alt="menu" fixed={data.close.childImageSharp.fixed} />}
       </Hamburger>
       {menuOpen && <MobileLinks open={menuOpen}>{renderLinks()}</MobileLinks>}
     </Container>
