@@ -81,27 +81,33 @@ const Header = ({ siteTitle }) => {
     document.body.style = 'position: initial';
   };
 
-  const renderLinks = () => (
-    <>
-      <Link to="/">
-        <h4
-          className={
-            window.location.pathname === '/' || window.location.pathname.includes('/20')
-              ? 'selected'
-              : ''
-          }
-        >
-          Work
-        </h4>
-      </Link>
-      <Link to="/about">
-        <h4 className={window.location.pathname === '/about' ? 'selected' : ''}>About</h4>
-      </Link>
-      <Link to="/contact">
-        <h4 className={window.location.pathname === '/contact' ? 'selected' : ''}>Contact</h4>
-      </Link>
-    </>
-  );
+  const renderLinks = () => {
+    if (typeof window !== 'undefined') {
+      return (
+        <>
+          <Link to="/">
+            <h4
+              className={
+                window.location.pathname === '/' || window.location.pathname.includes('/20')
+                  ? 'selected'
+                  : ''
+              }
+            >
+              Work
+            </h4>
+          </Link>
+          <Link to="/about">
+            <h4 className={window.location.pathname === '/about' ? 'selected' : ''}>About</h4>
+          </Link>
+          <Link to="/contact">
+            <h4 className={window.location.pathname === '/contact' ? 'selected' : ''}>Contact</h4>
+          </Link>
+        </>
+      );
+    }
+
+    return <></>;
+  };
 
   return (
     <Container>
