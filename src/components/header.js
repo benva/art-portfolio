@@ -88,7 +88,8 @@ const Header = ({ siteTitle }) => {
           <Link to="/">
             <h4
               className={
-                window.location.pathname === '/' || window.location.pathname.includes('/20')
+                window.location.pathname === '/art-portfolio/'
+                || window.location.pathname.includes('/20')
                   ? 'selected'
                   : ''
               }
@@ -97,10 +98,12 @@ const Header = ({ siteTitle }) => {
             </h4>
           </Link>
           <Link to="/about">
-            <h4 className={window.location.pathname === '/about' ? 'selected' : ''}>About</h4>
+            <h4 className={window.location.pathname.includes('/about') ? 'selected' : ''}>About</h4>
           </Link>
           <Link to="/contact">
-            <h4 className={window.location.pathname === '/contact' ? 'selected' : ''}>Contact</h4>
+            <h4 className={window.location.pathname.includes('/contact') ? 'selected' : ''}>
+              Contact
+            </h4>
           </Link>
         </>
       );
