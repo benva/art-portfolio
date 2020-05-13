@@ -16,34 +16,32 @@ const Container = styled.header`
   }
 `;
 
-const Links = styled.div`
+const LinkContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  width: 300px;
+
   @media (max-width: ${tablet}) {
     display: none;
   }
 `;
 
-const MobileLinks = styled.div`
+const MobileLinkContainer = styled.div`
   background-color: red;
   position: fixed;
   top: 0;
   left: ${({ open }) => (open ? '0' : '100%')};
   width: 100%;
   height: 100%;
-  transition: left 0.5s;
+  transition: left 0.5s ease;
   z-index: 1;
-`;
-
-const LinksContainer = styled.div`
   display: flex;
-  justify-content: space-evenly;
-  width: 300px;
+  flex-direction: column;
+  padding-top: 100px;
+  align-items: center;
 
-  @media (max-width: ${tablet}) {
-    display: ${({ open }) => (open ? 'block' : 'none')};
-    flex-direction: column;
-    width: inherit;
-    text-align: center;
-    margin-top: 100px;
+  @media (min-width: ${tablet}) {
+    display: none;
   }
 `;
 
@@ -87,7 +85,7 @@ const Header = ({ siteTitle }) => {
   const closeMenu = () => setMenuOpen(false);
 
   const renderLinks = () => (
-    <LinksContainer open={menuOpen}>
+    <>
       <h3>
         <Link onClick={closeMenu} to="/about">
           About
@@ -98,7 +96,7 @@ const Header = ({ siteTitle }) => {
           Contact
         </Link>
       </h3>
-    </LinksContainer>
+    </>
   );
 
   return (
@@ -106,8 +104,8 @@ const Header = ({ siteTitle }) => {
       <h1>
         <Link to="/">{siteTitle}</Link>
       </h1>
-      <Links>{renderLinks()}</Links>
-      <MobileLinks open={menuOpen}>{renderLinks()}</MobileLinks>
+      <LinkContainer>{renderLinks()}</LinkContainer>
+      <MobileLinkContainer open={menuOpen}>{renderLinks()}</MobileLinkContainer>
       <Hamburger onClick={toggleMenu}>
         {!menuOpen && <Img alt="menu" fixed={data.hamburger.childImageSharp.fixed} />}
         {menuOpen && <Img alt="menu" fixed={data.close.childImageSharp.fixed} />}

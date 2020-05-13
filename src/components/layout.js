@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
+      <main style={{ margin: '100px 0' }}>{children}</main>
       <GlobalStyle />
     </>
   );
