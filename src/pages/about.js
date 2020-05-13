@@ -22,7 +22,6 @@ const Column = styled.div`
 
   a {
     font-weight: 600;
-    color: blue;
   }
 `;
 

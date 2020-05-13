@@ -9,7 +9,7 @@ const Text = styled.h2`
 const Title = ({ children }) => <Text>{children}</Text>;
 
 Title.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.string.isRequired,
 };
 
 export default Title;
