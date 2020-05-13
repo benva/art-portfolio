@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import Layout from './layout';
 import SEO from './seo';
+import Title from './title';
 
 const Container = styled.div`
   max-width: 800px;
@@ -15,8 +16,8 @@ const Container = styled.div`
 const ImageGallery = ({ images, year }) => (
   <Layout>
     <SEO title={year} />
+    <Title>{year}</Title>
     <Container>
-      <p>{year}</p>
       <ReactImageGallery
         autoPlay={false}
         lazyLoad

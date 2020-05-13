@@ -22,6 +22,10 @@ const LinkContainer = styled.div`
   justify-content: space-evenly;
   width: 300px;
 
+  .selected {
+    border-bottom: 2px red solid;
+  }
+
   @media (max-width: ${tablet}) {
     display: none;
   }
@@ -41,7 +45,11 @@ const MobileLinkContainer = styled.div`
   padding-top: 100px;
   align-items: center;
 
-  @media (min-width: ${tablet}) {
+  .selected {
+    border-bottom: 2px white solid;
+  }
+
+  @media (min-width: calc(${tablet} + 1px)) {
     display: none;
   }
 `;
@@ -75,11 +83,22 @@ const Header = ({ siteTitle }) => {
 
   const renderLinks = () => (
     <>
-      <Link onClick={closeMenu} to="/about">
-        <h3>About</h3>
+      <Link to="/">
+        <h4
+          className={
+            window.location.pathname === '/' || window.location.pathname.includes('/20')
+              ? 'selected'
+              : ''
+          }
+        >
+          Work
+        </h4>
       </Link>
-      <Link onClick={closeMenu} to="/contact">
-        <h3>Contact</h3>
+      <Link to="/about">
+        <h4 className={window.location.pathname === '/about' ? 'selected' : ''}>About</h4>
+      </Link>
+      <Link to="/contact">
+        <h4 className={window.location.pathname === '/contact' ? 'selected' : ''}>Contact</h4>
       </Link>
     </>
   );
