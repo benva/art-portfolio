@@ -1,9 +1,10 @@
-import { Link, useStaticQuery, graphql } from 'gatsby';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
 
+import Hamburger from '../images/header/hamburger.png';
+import Close from '../images/header/close.png';
 import { tablet } from './global-style';
 
 const Container = styled.header`
@@ -45,13 +46,14 @@ const MobileLinkContainer = styled.div`
   }
 `;
 
-const Hamburger = styled.div`
+const Action = styled.div`
   cursor: pointer;
   display: none;
   position: absolute;
   top: 28px;
   right: 20px;
   z-index: 1;
+  width: 30px;
 
   @media (max-width: ${tablet}) {
     display: block;
@@ -59,43 +61,26 @@ const Hamburger = styled.div`
 `;
 
 const Header = ({ siteTitle }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      hamburger: file(relativePath: { eq: "header/hamburger.png" }) {
-        childImageSharp {
-          fixed(width: 32) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      close: file(relativePath: { eq: "header/close.png" }) {
-        childImageSharp {
-          fixed(width: 32) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `);
-
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => setMenuOpen((prevMenuOpen) => !prevMenuOpen);
+  const openMenu = () => {
+    setMenuOpen(true);
+    document.body.style = 'position: fixed';
+  };
 
-  const closeMenu = () => setMenuOpen(false);
+  const closeMenu = () => {
+    setMenuOpen(false);
+    document.body.style = 'position: initial';
+  };
 
   const renderLinks = () => (
     <>
-      <h3>
-        <Link onClick={closeMenu} to="/about">
-          About
-        </Link>
-      </h3>
-      <h3>
-        <Link onClick={closeMenu} to="/contact">
-          Contact
-        </Link>
-      </h3>
+      <Link onClick={closeMenu} to="/about">
+        <h3>About</h3>
+      </Link>
+      <Link onClick={closeMenu} to="/contact">
+        <h3>Contact</h3>
+      </Link>
     </>
   );
 
@@ -106,10 +91,10 @@ const Header = ({ siteTitle }) => {
       </h1>
       <LinkContainer>{renderLinks()}</LinkContainer>
       <MobileLinkContainer open={menuOpen}>{renderLinks()}</MobileLinkContainer>
-      <Hamburger onClick={toggleMenu}>
-        {!menuOpen && <Img alt="menu" fixed={data.hamburger.childImageSharp.fixed} />}
-        {menuOpen && <Img alt="menu" fixed={data.close.childImageSharp.fixed} />}
-      </Hamburger>
+      <Action onClick={menuOpen ? closeMenu : openMenu}>
+        {!menuOpen && <img alt="menu" src={Hamburger} />}
+        {menuOpen && <img alt="close" src={Close} />}
+      </Action>
     </Container>
   );
 };
