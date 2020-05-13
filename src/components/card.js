@@ -8,6 +8,11 @@ const Container = styled.div`
   height: 300px;
   position: relative;
   margin-bottom: 50px;
+  pointer-events: none;
+
+  a {
+    pointer-events: auto;
+  }
 
   &:after {
     content: '';
@@ -34,12 +39,12 @@ const Container = styled.div`
 `;
 
 const Card = ({ year }) => (
-  <Link to={`/${year}`}>
-    <Container>
+  <Container>
+    <Link to={`/${year}`}>
       <img alt={year} src="https://via.placeholder.com/300" />
       <p className="year">{year}</p>
-    </Container>
-  </Link>
+    </Link>
+  </Container>
 );
 
 Card.propTypes = {
