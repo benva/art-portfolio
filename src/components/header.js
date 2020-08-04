@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
@@ -57,7 +58,7 @@ const MobileLinkContainer = styled.div`
 const Action = styled.div`
   cursor: pointer;
   display: none;
-  position: absolute;
+  position: fixed;
   top: 28px;
   right: 20px;
   z-index: 1;
@@ -71,15 +72,9 @@ const Action = styled.div`
 const Header = ({ siteTitle }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const openMenu = () => {
-    setMenuOpen(true);
-    document.body.style = 'position: fixed';
-  };
+  const openMenu = () => setMenuOpen(true);
 
-  const closeMenu = () => {
-    setMenuOpen(false);
-    document.body.style = 'position: initial';
-  };
+  const closeMenu = () => setMenuOpen(false);
 
   const renderLinks = () => {
     if (typeof window !== 'undefined') {
@@ -88,8 +83,8 @@ const Header = ({ siteTitle }) => {
           <Link to="/">
             <h4
               className={
-                window.location.pathname === '/art-portfolio/'
-                || window.location.pathname.includes('/20')
+                window.location.pathname === '/' ||
+                window.location.pathname.includes('/20')
                   ? 'selected'
                   : ''
               }
@@ -98,10 +93,20 @@ const Header = ({ siteTitle }) => {
             </h4>
           </Link>
           <Link to="/about">
-            <h4 className={window.location.pathname.includes('/about') ? 'selected' : ''}>About</h4>
+            <h4
+              className={
+                window.location.pathname.includes('/about') ? 'selected' : ''
+              }
+            >
+              About
+            </h4>
           </Link>
           <Link to="/contact">
-            <h4 className={window.location.pathname.includes('/contact') ? 'selected' : ''}>
+            <h4
+              className={
+                window.location.pathname.includes('/contact') ? 'selected' : ''
+              }
+            >
               Contact
             </h4>
           </Link>
