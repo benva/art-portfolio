@@ -6,6 +6,8 @@ export const tablet = '768px';
 export const desktop = '1024px';
 export const largeDesktop = '1440px';
 
+export const red = '#e62507';
+
 const GlobalStyle = createGlobalStyle`
   a,
   a:visited,

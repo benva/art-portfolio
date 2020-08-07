@@ -1,4 +1,3 @@
-/* eslint-disable operator-linebreak */
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
@@ -6,7 +5,7 @@ import styled from 'styled-components';
 
 import Hamburger from '../images/header/hamburger.png';
 import Close from '../images/header/close.png';
-import { tablet } from './global-style';
+import { tablet, red } from './global-style';
 
 const Container = styled.header`
   text-transform: uppercase;
@@ -24,7 +23,7 @@ const LinkContainer = styled.div`
   width: 300px;
 
   .selected {
-    border-bottom: 2px red solid;
+    border-bottom: 2px ${red} solid;
   }
 
   @media (max-width: ${tablet}) {
@@ -33,7 +32,7 @@ const LinkContainer = styled.div`
 `;
 
 const MobileLinkContainer = styled.div`
-  background-color: red;
+  background-color: ${red};
   position: fixed;
   top: 0;
   left: ${({ open }) => (open ? '0' : '100%')};
