@@ -25,9 +25,34 @@ const LinkContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   width: 300px;
+  height: 30px;
 
   .selected {
     border-bottom: 2px ${red} solid;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    box-shadow: 0 0 10px 0 rgba(99, 140, 177, 0.2);
+    top: 30px;
+    left: -10px;
+    padding: 20px 20px 0 20px;
+    z-index: 2;
+    background-color: #fff;
+
+    a:not(:last-of-type) {
+      margin-bottom: 1.5em;
+    }
   }
 
   @media (max-width: ${tablet}) {
@@ -53,6 +78,10 @@ const MobileLinkContainer = styled.div`
     border-bottom: 2px white solid;
   }
 
+  .dropdown-content {
+    display: none;
+  }
+
   @media (min-width: calc(${tablet} + 1px)) {
     display: none;
   }
@@ -73,28 +102,78 @@ const Action = styled.div`
 `;
 
 const Header = ({ siteTitle }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const openMenu = () => setMenuOpen(true);
+  const openMobileMenu = () => setMobileMenuOpen(true);
 
-  const closeMenu = () => setMenuOpen(false);
+  const closeMobileMenu = () => setMobileMenuOpen(false);
+
+  const renderYearLinks = () => {
+    if (typeof window !== 'undefined') {
+      return (
+        <>
+          <Link to="/2018">
+            <h4
+              className={
+                window.location.pathname.includes('2018') ? 'selected' : ''
+              }
+            >
+              2018
+            </h4>
+          </Link>
+          <Link to="/2017">
+            <h4
+              className={
+                window.location.pathname.includes('2017') ? 'selected' : ''
+              }
+            >
+              2017
+            </h4>
+          </Link>
+          <Link to="/2016">
+            <h4
+              className={
+                window.location.pathname.includes('2016') ? 'selected' : ''
+              }
+            >
+              2016
+            </h4>
+          </Link>
+          <Link to="/2015">
+            <h4
+              className={
+                window.location.pathname.includes('2015') ? 'selected' : ''
+              }
+            >
+              2015
+            </h4>
+          </Link>
+        </>
+      );
+    }
+
+    return <></>;
+  };
 
   const renderLinks = () => {
     if (typeof window !== 'undefined') {
       return (
         <>
-          <Link to="/">
-            <h4
-              className={
-                window.location.pathname === '/' ||
-                window.location.pathname.includes('/20')
-                  ? 'selected'
-                  : ''
-              }
-            >
-              Work
-            </h4>
-          </Link>
+          <div className="dropdown">
+            <Link to="/">
+              <h4
+                className={
+                  window.location.pathname === '/' ||
+                  window.location.pathname.includes('/20')
+                    ? 'selected'
+                    : ''
+                }
+              >
+                Work
+              </h4>
+            </Link>
+            <div className="dropdown-content">{renderYearLinks()}</div>
+          </div>
           <Link to="/about">
             <h4
               className={
@@ -126,10 +205,12 @@ const Header = ({ siteTitle }) => {
         <Link to="/">{siteTitle}</Link>
       </h1>
       <LinkContainer>{renderLinks()}</LinkContainer>
-      <MobileLinkContainer open={menuOpen}>{renderLinks()}</MobileLinkContainer>
-      <Action onClick={menuOpen ? closeMenu : openMenu}>
-        {!menuOpen && <img alt="menu" src={Hamburger} />}
-        {menuOpen && <img alt="close" src={Close} />}
+      <MobileLinkContainer open={mobileMenuOpen}>
+        {renderLinks()}
+      </MobileLinkContainer>
+      <Action onClick={mobileMenuOpen ? closeMobileMenu : openMobileMenu}>
+        {!mobileMenuOpen && <img alt="menu" src={Hamburger} />}
+        {mobileMenuOpen && <img alt="close" src={Close} />}
       </Action>
     </Container>
   );
