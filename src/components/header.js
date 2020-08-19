@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import Hamburger from '../images/header/hamburger.png';
 import Close from '../images/header/close.png';
-import { tablet, red } from './global-style';
+import { tablet, red, phone } from './global-style';
 
 const Container = styled.header`
   text-transform: uppercase;
@@ -14,6 +14,10 @@ const Container = styled.header`
 
   h1 {
     margin-right: auto;
+
+    @media (max-width: ${phone}) {
+      font-size: 1.5em;
+    }
   }
 `;
 
@@ -57,7 +61,7 @@ const MobileLinkContainer = styled.div`
 const Action = styled.div`
   cursor: pointer;
   display: none;
-  position: fixed;
+  position: absolute;
   top: 28px;
   right: 20px;
   z-index: 1;
