@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { tablet } from '../components/global-style';
 
@@ -20,7 +19,7 @@ const Container = styled.div`
 `;
 
 const IndexPage = () => (
-  <Layout>
+  <div>
     <SEO title="Contact" />
     <Container>
       <h2>CONTACT</h2>
@@ -29,7 +28,7 @@ const IndexPage = () => (
         <a href="mailto:seoeunkimart@gmail.com">seoeunkimart@gmail.com</a>
       </p>
     </Container>
-  </Layout>
+  </div>
 );
 
 export default IndexPage;

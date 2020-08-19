@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { tablet } from '../components/global-style';
 
@@ -53,7 +52,7 @@ const Column = styled.div`
 `;
 
 const IndexPage = () => (
-  <Layout>
+  <div>
     <SEO title="About" />
     <Container>
       <h2>ABOUT</h2>
@@ -104,7 +103,7 @@ const IndexPage = () => (
         </Column>
       </AboutContainer>
     </Container>
-  </Layout>
+  </div>
 );
 
 export default IndexPage;

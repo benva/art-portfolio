@@ -339,6 +339,14 @@ h6 {
 p {
   font-family: 'Montserrat Alternates', sans-serif;
 }
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+}
+
 hgroup {
   margin-left: 0;
   margin-right: 0;
@@ -632,6 +640,11 @@ pre tt:before,
 pre tt:after {
   content: '';
 }
+
+.no-scroll {
+  overflow: hidden;
+}
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;

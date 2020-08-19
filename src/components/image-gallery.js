@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import ReactImageGallery from 'react-image-gallery';
 import PropTypes from 'prop-types';
 
-import Layout from './layout';
 import SEO from './seo';
 import RightArrow from '../images/image-gallery/right-arrow.svg';
 import LeftArrow from '../images/image-gallery/left-arrow.svg';
@@ -97,7 +96,7 @@ const ImageGallery = ({ images, year }) => {
   );
 
   return (
-    <Layout>
+    <div>
       <SEO title={year} />
       <Container>
         <h2>{year}</h2>
@@ -111,7 +110,7 @@ const ImageGallery = ({ images, year }) => {
           renderLeftNav={renderLeftNav}
         />
       </Container>
-    </Layout>
+    </div>
   );
 };
 

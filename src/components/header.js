@@ -125,6 +125,8 @@ const Header = ({ siteTitle }) => {
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
+  document.documentElement.classList.toggle('no-scroll', mobileMenuOpen);
+
   const renderYearLinks = () => {
     if (typeof window !== 'undefined') {
       return (
@@ -177,7 +179,7 @@ const Header = ({ siteTitle }) => {
       return (
         <>
           <div className="dropdown">
-            <Link to="/">
+            <Link onClick={closeMobileMenu} to="/">
               <h4
                 className={
                   window.location.pathname === '/' ||
@@ -191,7 +193,7 @@ const Header = ({ siteTitle }) => {
             </Link>
             <div className="dropdown-content">{renderYearLinks()}</div>
           </div>
-          <Link to="/about">
+          <Link onClick={closeMobileMenu} to="/about">
             <h4
               className={
                 window.location.pathname.includes('/about') ? 'selected' : ''
@@ -200,7 +202,7 @@ const Header = ({ siteTitle }) => {
               About
             </h4>
           </Link>
-          <Link to="/contact">
+          <Link onClick={closeMobileMenu} to="/contact">
             <h4
               className={
                 window.location.pathname.includes('/contact') ? 'selected' : ''
