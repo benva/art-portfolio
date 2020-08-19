@@ -3,11 +3,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
+import { phone } from './global-style';
+
 const Container = styled.div`
-  width: 300px;
-  height: 300px;
   position: relative;
-  margin-bottom: 50px;
   pointer-events: none;
 
   a {
@@ -21,7 +20,7 @@ const Container = styled.div`
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.2);
     opacity: 0;
     transition: opacity 0.5s ease;
   }
@@ -35,6 +34,10 @@ const Container = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @media (max-width: ${phone}) {
+      display: none;
+    }
   }
 `;
 
@@ -42,7 +45,7 @@ const Card = ({ year }) => (
   <Container>
     <Link to={`/${year}`}>
       <img alt={year} src="https://via.placeholder.com/300" />
-      <p className="year">{year}</p>
+      <h3 className="year">{year}</h3>
     </Link>
   </Container>
 );

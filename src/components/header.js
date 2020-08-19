@@ -95,16 +95,26 @@ const Action = styled.div`
   top: 20px;
   right: 20px;
 
-  .close {
-    width: 30px;
+  .menu {
+    width: 60px;
   }
 
-  .menu {
+  .close {
     width: 40px;
   }
 
   @media (max-width: ${tablet}) {
     display: block;
+  }
+
+  @media (max-width: ${phone}) {
+    .close {
+      width: 30px;
+    }
+
+    .menu {
+      width: 40px;
+    }
   }
 `;
 
