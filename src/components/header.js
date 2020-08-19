@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import Hamburger from '../images/header/hamburger.png';
-import Close from '../images/header/close.png';
+import Hamburger from '../images/header/hamburger-menu.svg';
+import Close from '../images/header/close.svg';
 import { tablet, red, phone } from './global-style';
 
 const Container = styled.header`
   text-transform: uppercase;
   display: flex;
-  margin: 20px;
+  margin: 27px 20px 20px 20px;
 
   h1 {
     margin-right: auto;
@@ -91,10 +91,17 @@ const Action = styled.div`
   cursor: pointer;
   display: none;
   position: absolute;
-  top: 28px;
-  right: 20px;
   z-index: 1;
-  width: 30px;
+  top: 20px;
+  right: 20px;
+
+  .close {
+    width: 30px;
+  }
+
+  .menu {
+    width: 40px;
+  }
 
   @media (max-width: ${tablet}) {
     display: block;
@@ -209,8 +216,8 @@ const Header = ({ siteTitle }) => {
         {renderLinks()}
       </MobileLinkContainer>
       <Action onClick={mobileMenuOpen ? closeMobileMenu : openMobileMenu}>
-        {!mobileMenuOpen && <img alt="menu" src={Hamburger} />}
-        {mobileMenuOpen && <img alt="close" src={Close} />}
+        {!mobileMenuOpen && <img alt="menu" className="menu" src={Hamburger} />}
+        {mobileMenuOpen && <img alt="close" className="close" src={Close} />}
       </Action>
     </Container>
   );
