@@ -157,12 +157,7 @@ const Header = ({ siteTitle }) => {
           <div className="dropdown">
             <Link onClick={closeMobileMenu} to="/">
               <h4
-                className={
-                  window.location.pathname === '/' ||
-                  window.location.pathname.includes('/20')
-                    ? 'selected'
-                    : ''
-                }
+                className={window.location.pathname === '/' ? 'selected' : ''}
               >
                 Work
               </h4>

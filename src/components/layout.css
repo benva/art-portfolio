@@ -652,3 +652,13 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+/* react-bnb-gallery */
+.thumbnail-button {
+  border: none;
+}
+
+.caption-right {
+  font-family: sans-serif;
+}
+/* react-bnb-gallery */
