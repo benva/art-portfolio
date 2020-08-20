@@ -3,14 +3,17 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
 
-import { phone } from './global-style';
-
 const Container = styled.div`
   position: relative;
   pointer-events: none;
+  overflow: hidden;
 
   a {
     pointer-events: auto;
+  }
+
+  img {
+    transition: transform 0.5s ease;
   }
 
   &:after {
@@ -29,15 +32,15 @@ const Container = styled.div`
     opacity: 1;
   }
 
+  &:hover img {
+    transform: scale(1.1);
+  }
+
   .year {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    @media (max-width: ${phone}) {
-      display: none;
-    }
   }
 `;
 
