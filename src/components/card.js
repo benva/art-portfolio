@@ -14,6 +14,9 @@ const Container = styled.div`
 
   img {
     transition: transform 0.5s ease;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 
   &:after {
@@ -44,20 +47,22 @@ const Container = styled.div`
   }
 `;
 
-const Card = ({ year }) => (
+const Card = ({ image, year }) => (
   <Container>
     <Link to={`/${year}`}>
-      <img alt={year} src="https://via.placeholder.com/375" />
+      <img alt={year} src={image} />
       <h3 className="year">{year}</h3>
     </Link>
   </Container>
 );
 
 Card.propTypes = {
+  image: PropTypes.string,
   year: PropTypes.string,
 };
 
 Card.defaultProps = {
+  image: 'https://via.placeholder.com/375',
   year: '',
 };
 

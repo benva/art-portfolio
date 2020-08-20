@@ -3,6 +3,10 @@ import styled from 'styled-components';
 
 import SEO from '../components/seo';
 import Card from '../components/card';
+import TwentyEighteen from '../images/2018/thumbnails/Suture_1.jpg';
+import TwentySeventeen from '../images/2017/thumbnails/Filtered_Collage_6.jpg';
+import TwentySixteen from '../images/2016/thumbnails/Untitled.jpg';
+import TwentyFifteen from '../images/2015/thumbnails/Untitled_Collage_1.jpg';
 
 const CardContainer = styled.div`
   display: grid;
@@ -35,10 +39,10 @@ const IndexPage = () => (
   <div>
     <SEO title="Home" />
     <CardContainer>
-      <Card year="2018" />
-      <Card year="2017" />
-      <Card year="2016" />
-      <Card year="2015" />
+      <Card image={TwentyEighteen} year="2018" />
+      <Card image={TwentySeventeen} year="2017" />
+      <Card image={TwentySixteen} year="2016" />
+      <Card image={TwentyFifteen} year="2015" />
     </CardContainer>
   </div>
 );
