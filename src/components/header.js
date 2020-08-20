@@ -125,7 +125,9 @@ const Header = ({ siteTitle }) => {
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
-  document.documentElement.classList.toggle('no-scroll', mobileMenuOpen);
+  if (typeof window !== 'undefined') {
+    document.documentElement.classList.toggle('no-scroll', mobileMenuOpen);
+  }
 
   const renderYearLinks = () => {
     if (typeof window !== 'undefined') {
