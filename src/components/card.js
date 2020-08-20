@@ -47,7 +47,7 @@ const Container = styled.div`
 const Card = ({ year }) => (
   <Container>
     <Link to={`/${year}`}>
-      <img alt={year} src="https://via.placeholder.com/300" />
+      <img alt={year} src="https://via.placeholder.com/375" />
       <h3 className="year">{year}</h3>
     </Link>
   </Container>
