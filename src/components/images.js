@@ -1,18 +1,21 @@
 const twentyEighteen = [
   {
-    original: 'https://via.placeholder.com/800x600',
+    photo: 'https://via.placeholder.com/800x600',
     thumbnail: 'https://via.placeholder.com/200x150',
-    description: 'Image #1',
+    caption: 'This is image #1 catpion',
+    subcaption: 'This is image #1 subcatpion',
   },
   {
-    original: 'https://via.placeholder.com/600',
+    photo: 'https://via.placeholder.com/600',
     thumbnail: 'https://via.placeholder.com/200x150',
-    description: 'Image #2',
+    caption: 'This is image #2 catpion',
+    subcaption: 'This is image #2 subcatpion',
   },
   {
-    original: 'https://via.placeholder.com/600x800',
+    photo: 'https://via.placeholder.com/600x800',
     thumbnail: 'https://via.placeholder.com/200x150',
-    description: 'Image #3',
+    caption: 'This is image #3 catpion',
+    subcaption: 'This is image #3 subcatpion',
   },
 ];
 

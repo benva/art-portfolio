@@ -132,40 +132,16 @@ const Header = ({ siteTitle }) => {
       return (
         <>
           <Link to="/2018">
-            <h4
-              className={
-                window.location.pathname.includes('2018') ? 'selected' : ''
-              }
-            >
-              2018
-            </h4>
+            <h4>2018</h4>
           </Link>
           <Link to="/2017">
-            <h4
-              className={
-                window.location.pathname.includes('2017') ? 'selected' : ''
-              }
-            >
-              2017
-            </h4>
+            <h4>2017</h4>
           </Link>
           <Link to="/2016">
-            <h4
-              className={
-                window.location.pathname.includes('2016') ? 'selected' : ''
-              }
-            >
-              2016
-            </h4>
+            <h4>2016</h4>
           </Link>
           <Link to="/2015">
-            <h4
-              className={
-                window.location.pathname.includes('2015') ? 'selected' : ''
-              }
-            >
-              2015
-            </h4>
+            <h4>2015</h4>
           </Link>
         </>
       );
