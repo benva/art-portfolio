@@ -8,7 +8,12 @@ import SEO from './seo';
 const ImageGallery = ({ images, year }) => (
   <div>
     <SEO title={year} />
-    <ReactBnbGallery show photos={images} onClose={() => navigate('/')} />
+    <ReactBnbGallery
+      opacity={0.8}
+      show
+      photos={images}
+      onClose={() => navigate('/')}
+    />
   </div>
 );
 
