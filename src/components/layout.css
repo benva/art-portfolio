@@ -661,4 +661,8 @@ pre tt:after {
 .caption-right {
   font-family: sans-serif;
 }
+
+.gallery ul.gallery-images--ul li.gallery-media-photo .picture img.photo {
+  border-radius: 0;
+}
 /* react-bnb-gallery */
