@@ -4,14 +4,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  width: 300px;
-  height: 300px;
   position: relative;
-  margin-bottom: 50px;
   pointer-events: none;
+  overflow: hidden;
 
   a {
     pointer-events: auto;
+  }
+
+  img {
+    transition: transform 0.5s ease;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 
   &:after {
@@ -21,13 +26,17 @@ const Container = styled.div`
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.2);
     opacity: 0;
     transition: opacity 0.5s ease;
   }
 
   &:hover:after {
     opacity: 1;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
   }
 
   .year {
@@ -38,20 +47,22 @@ const Container = styled.div`
   }
 `;
 
-const Card = ({ year }) => (
+const Card = ({ image, year }) => (
   <Container>
     <Link to={`/${year}`}>
-      <img alt={year} src="https://via.placeholder.com/300" />
-      <p className="year">{year}</p>
+      <img alt={year} src={image} />
+      <h3 className="year">{year}</h3>
     </Link>
   </Container>
 );
 
 Card.propTypes = {
+  image: PropTypes.string,
   year: PropTypes.string,
 };
 
 Card.defaultProps = {
+  image: 'https://via.placeholder.com/375',
   year: '',
 };
 

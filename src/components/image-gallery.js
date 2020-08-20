@@ -1,32 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
-import ReactImageGallery from 'react-image-gallery';
+import ReactBnbGallery from 'react-bnb-gallery';
 import PropTypes from 'prop-types';
+import { navigate } from 'gatsby';
 
-import Layout from './layout';
 import SEO from './seo';
-import Title from './title';
-
-const Container = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-`;
 
 const ImageGallery = ({ images, year }) => (
-  <Layout>
+  <div>
     <SEO title={year} />
-    <Title>{year}</Title>
-    <Container>
-      <ReactImageGallery
-        autoPlay={false}
-        lazyLoad
-        items={images}
-        showFullscreenButton={false}
-        showPlayButton={false}
-      />
-    </Container>
-  </Layout>
+    <ReactBnbGallery
+      opacity={0.8}
+      show
+      photos={images}
+      onClose={() => navigate('/')}
+    />
+  </div>
 );
 
 ImageGallery.propTypes = {
