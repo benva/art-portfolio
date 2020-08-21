@@ -14,6 +14,7 @@ const Container = styled.header`
 
   h1 {
     margin-right: auto;
+    text-transform: lowercase;
 
     @media (max-width: ${phone}) {
       font-size: 1.5em;

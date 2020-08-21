@@ -39,11 +39,17 @@ const Container = styled.div`
     transform: scale(1.1);
   }
 
+  &:hover .year {
+    opacity: 1;
+  }
+
   .year {
+    opacity: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: opacity 0.5s ease;
   }
 `;
 
@@ -51,7 +57,7 @@ const Card = ({ image, year }) => (
   <Container>
     <Link to={`/${year}`}>
       <img alt={year} src={image} />
-      <h3 className="year">{year}</h3>
+      <h2 className="year">{year}</h2>
     </Link>
   </Container>
 );
