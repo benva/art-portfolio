@@ -1,5 +1,5 @@
 @import '~react-bnb-gallery/dist/style.css';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
 
 html {
@@ -11,6 +11,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-width: 320px;
 }
 article,
 aside,
@@ -649,19 +650,23 @@ pre tt:after {
   }
 }
 
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 100%;
+@media only screen and (max-width: 540px) {
+  h1 {
+    font-size: 1.75em;
+  }
+
+  h2 {
+    font-size: 1.25em;
   }
 }
 
 /* react-bnb-gallery */
-.thumbnail-button {
-  border: none;
+.gallery-figcaption {
+  margin-top: 20px;
 }
 
-.caption-right {
-  font-family: sans-serif;
+.gallery-figcaption .gallery-figcaption--info .caption-right {
+  display: none;
 }
 
 .gallery ul.gallery-images--ul li.gallery-media-photo .picture img.photo {

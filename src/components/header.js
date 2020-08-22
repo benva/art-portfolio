@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
@@ -5,20 +6,42 @@ import styled from 'styled-components';
 
 import Hamburger from '../images/header/hamburger-menu.svg';
 import Close from '../images/header/close.svg';
-import { tablet, red, phone } from './global-style';
+import { tablet, red, phone, smallPhone } from './global-style';
 
 const Container = styled.header`
   text-transform: uppercase;
   display: flex;
-  margin: 27px 20px 20px 20px;
+  margin: 20px;
+  align-items: center;
 
   h1 {
     margin-right: auto;
+    margin-bottom: 0;
     text-transform: lowercase;
+  }
 
-    @media (max-width: ${phone}) {
-      font-size: 1.5em;
+  .menu {
+    margin-top: -2px;
+    width: 50px;
+    cursor: pointer;
+    display: none;
+  }
+
+  @media (max-width: ${tablet}) {
+    .menu {
+      display: block;
     }
+  }
+
+  @media (max-width: ${phone}) {
+    .menu {
+      width: 40px;
+    }
+  }
+
+  @media (max-width: ${smallPhone}) {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 `;
 
@@ -83,38 +106,29 @@ const MobileLinkContainer = styled.div`
     display: none;
   }
 
+  .close {
+    width: 40px;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+  }
+
   @media (min-width: calc(${tablet} + 1px)) {
     display: none;
   }
-`;
-
-const Action = styled.div`
-  cursor: pointer;
-  display: none;
-  position: absolute;
-  z-index: 1;
-  top: 20px;
-  right: 20px;
-
-  .menu {
-    width: 60px;
-  }
-
-  .close {
-    width: 40px;
-  }
 
   @media (max-width: ${tablet}) {
-    display: block;
+    .close {
+      display: block;
+    }
   }
 
   @media (max-width: ${phone}) {
     .close {
       width: 30px;
-    }
-
-    .menu {
-      width: 40px;
     }
   }
 `;
@@ -197,14 +211,24 @@ const Header = ({ siteTitle }) => {
       <h1>
         <Link to="/">{siteTitle}</Link>
       </h1>
+      <img
+        alt="menu"
+        className="menu"
+        onClick={openMobileMenu}
+        role="presentation"
+        src={Hamburger}
+      />
       <LinkContainer>{renderLinks()}</LinkContainer>
       <MobileLinkContainer open={mobileMenuOpen}>
         {renderLinks()}
+        <img
+          alt="close"
+          className="close"
+          onClick={closeMobileMenu}
+          role="presentation"
+          src={Close}
+        />
       </MobileLinkContainer>
-      <Action onClick={mobileMenuOpen ? closeMobileMenu : openMobileMenu}>
-        {!mobileMenuOpen && <img alt="menu" className="menu" src={Hamburger} />}
-        {mobileMenuOpen && <img alt="close" className="close" src={Close} />}
-      </Action>
     </Container>
   );
 };
