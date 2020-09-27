@@ -131,6 +131,10 @@ import Strings7Thumb from '../images/2018/thumbnails/Strings_7_8_x8__Acrylic_on_
 import Suture4Thumb from '../images/2018/thumbnails/Suture_4_30_x30__Acrylic_on_Canvas_2018.jpg';
 import Suture1Thumb from '../images/2018/thumbnails/Suture1_48_x72__Acrylic_and_Oil_on_Canvas_2018.jpg';
 
+// 2020
+import MakingTroubles from '../images/2020/Making_Troubles_6x8_Cardstock_and_Acrylic_2020.jpeg';
+import MakingTroublesThumb from '../images/2020/thumbnails/Making_Troubles_6x8_Cardstock_and_Acrylic_2020.jpg';
+
 const twentyFifteen = [
   {
     photo: UntitledCollage1,
@@ -515,6 +519,20 @@ const twentyEighteen = [
   },
 ];
 
+const twentyTwenty = [
+  {
+    photo: MakingTroubles,
+    thumbnail: MakingTroublesThumb,
+    caption: 'Making Troubles (sold)',
+    subcaption: 'Cardstock and Acrylic. 6’x8’. 2020.',
+  },
+];
+
 export default twentyFifteen;
-// eslint-disable-next-line object-curly-newline
-export { twentyFifteen, twentySixteen, twentySeventeen, twentyEighteen };
+export {
+  twentyFifteen,
+  twentySixteen,
+  twentySeventeen,
+  twentyEighteen,
+  twentyTwenty,
+};
