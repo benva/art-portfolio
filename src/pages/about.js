@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import SEO from '../components/seo';
 import { tablet } from '../components/global-style';
 import Sunny from '../images/about/sunny.jpg';
+import CV from '../images/about/CV_Seo Eun Kim.pdf';
 
 const Container = styled.div`
   max-width: 1000px;
@@ -76,7 +77,7 @@ const IndexPage = () => (
             completing her M.A. in Cinema Studies.
           </p>
           <a
-            href="https://google.com"
+            href={CV}
             rel="noopener noreferrer"
             target="_blank"
             style={{ marginBottom: '20px' }}
