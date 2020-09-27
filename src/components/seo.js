@@ -10,9 +10,10 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({
-  description, lang, meta, title,
-}) {
+import MakingTroubles from '../images/2020/thumbnails/Making_Troubles_6x8_Cardstock_and_Acrylic_2020.jpg';
+
+// eslint-disable-next-line object-curly-newline
+function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -27,8 +28,6 @@ function SEO({
     `,
   );
 
-  const metaDescription = description || site.siteMetadata.description;
-
   return (
     <Helmet
       htmlAttributes={{
@@ -39,15 +38,19 @@ function SEO({
       meta={[
         {
           name: 'description',
-          content: metaDescription,
+          content: description,
         },
         {
           property: 'og:title',
-          content: title,
+          content: 'Seo Eun Kim',
+        },
+        {
+          property: 'og:image',
+          content: MakingTroubles,
         },
         {
           property: 'og:description',
-          content: metaDescription,
+          content: description,
         },
         {
           property: 'og:type',
@@ -63,11 +66,11 @@ function SEO({
         },
         {
           name: 'twitter:title',
-          content: title,
+          content: 'Seo Eun Kim',
         },
         {
           name: 'twitter:description',
-          content: metaDescription,
+          content: description,
         },
       ].concat(meta)}
     />
