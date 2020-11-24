@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 // 2015
-import Lobster from '../images/2015/Lobster_40_x40_Acrylic_on_Canvas_2015.jpg';
+import Lobster from '../images/2015/Lobster.jpg';
 import Marshmallow from '../images/2015/Marshmallow_16_x16__Acrylic_on_Canvas_2015.jpg';
 import UntitledCollage1 from '../images/2015/Untitled_Collage_1_48_x36__Acrylic_on_Canvas_2015.jpg';
 import UntitledCollage2 from '../images/2015/Untitled_Collage_2_48_x36__Acrylic_on_Canvas_2015.jpg';
-import LobsterThumb from '../images/2015/thumbnails/Lobster_40_x40_Acrylic_on_Canvas_2015.jpg';
+import LobsterThumb from '../images/2015/thumbnails/Lobster.jpg';
 import MarshmallowThumb from '../images/2015/thumbnails/Marshmallow_16_x16__Acrylic_on_Canvas_2015.jpg';
 import UntitledCollage1Thumb from '../images/2015/thumbnails/Untitled_Collage_1_48_x36__Acrylic_on_Canvas_2015.jpg';
 import UntitledCollage2Thumb from '../images/2015/thumbnails/Untitled_Collage_2_48_x36__Acrylic_on_Canvas_2015.jpg';
@@ -331,7 +331,7 @@ const twentySeventeen = [
   {
     photo: Sieve14,
     thumbnail: Sieve14Thumb,
-    caption: 'Sieve #12',
+    caption: 'Sieve #14',
     subcaption: 'Acrylic on Wood Panel. 6’x6’. 2017.',
   },
   {
@@ -343,13 +343,13 @@ const twentySeventeen = [
   {
     photo: Sieve12,
     thumbnail: Sieve12Thumb,
-    caption: 'Sieve #12',
+    caption: 'Sieve #12 (sold)',
     subcaption: 'Acrylic and Oil on Wood Panel. 6’x6’. 2017.',
   },
   {
     photo: Sieve11,
     thumbnail: Sieve11Thumb,
-    caption: 'Sieve #11',
+    caption: 'Sieve #11 (sold)',
     subcaption: 'Acrylic and Oil on Wood Panel. 12’x12’. 2017.',
   },
   {
@@ -418,7 +418,7 @@ const twentyEighteen = [
   {
     photo: Strings5,
     thumbnail: Strings5Thumb,
-    caption: 'Strings #5',
+    caption: 'Strings #5 (sold)',
     subcaption: 'Acrylic on Wood Panel. 6’x12’. 2018.',
   },
   {
@@ -490,7 +490,7 @@ const twentyEighteen = [
   {
     photo: Sieve21,
     thumbnail: Sieve21Thumb,
-    caption: 'Sieve #21',
+    caption: 'Sieve #21 (sold)',
     subcaption: 'Acrylic on Wood Panel. 3’x6’. 2018.',
   },
   {
