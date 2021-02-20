@@ -145,7 +145,7 @@ const twentyFifteen = [
   {
     photo: UntitledCollage2,
     thumbnail: UntitledCollage2Thumb,
-    caption: 'Untitled Collage #2',
+    caption: 'Untitled Collage #2 (Sold)',
     subcaption: 'Acrylic on Canvas. 48’x36’. 2015.',
   },
   {
@@ -208,13 +208,13 @@ const twentySixteen = [
   {
     photo: Untitled11,
     thumbnail: Untitled11Thumb,
-    caption: 'Untitled #8',
+    caption: 'Untitled #8 (Unavailable)',
     subcaption: 'Acrylic on Canvas. 40’x30’. 2016.',
   },
   {
     photo: Untitled5,
     thumbnail: Untitled5Thumb,
-    caption: 'Untitled #9',
+    caption: 'Untitled #9 (Unavailable)',
     subcaption: 'Acrylic on Canvas. 40’x30’. 2016.',
   },
   {
@@ -331,7 +331,7 @@ const twentySeventeen = [
   {
     photo: Sieve14,
     thumbnail: Sieve14Thumb,
-    caption: 'Sieve #14',
+    caption: 'Sieve #14 (Sold)',
     subcaption: 'Acrylic on Wood Panel. 6’x6’. 2017.',
   },
   {
@@ -412,7 +412,7 @@ const twentyEighteen = [
   {
     photo: Sieve26,
     thumbnail: Sieve26Thumb,
-    caption: 'Sieve #27',
+    caption: 'Sieve #27 (Sold)',
     subcaption: 'Acrylic on Wood Panel. 12’x16’. 2018.',
   },
   {
