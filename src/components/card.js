@@ -26,7 +26,7 @@ const Container = styled.div`
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(0deg, #00000088 20%, #ffffff44 100%);
     opacity: 0;
     transition: opacity 0.5s ease;
   }
@@ -44,12 +44,15 @@ const Container = styled.div`
   }
 
   .year {
+    color: #ffffff;
+    font-size: 1.75em;
     opacity: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: opacity 0.5s ease;
+    z-index: 10;
   }
 `;
 
