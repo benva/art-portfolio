@@ -5,3 +5,4 @@ https://www.seoeunkim.com
 ## Built Using
 
 - React (Gatsby)
+- Styled Components
